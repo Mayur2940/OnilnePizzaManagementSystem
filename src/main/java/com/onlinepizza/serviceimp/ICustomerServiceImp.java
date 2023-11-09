@@ -35,12 +35,14 @@ public class ICustomerServiceImp implements ICustomerService {
 	@Override
 	public Customer viewCustomerByPhone(Long phoneNo) {
 		return customerRepository.findByCustomerMobile(phoneNo);
+
 	}
 
 	@Override
 	public List<Customer> viewAllCustomer() {
-//        List<Customer> customersList = customerRepository.findAll();
-//		return customersList;
+
+//	        List<Customer> customersList = customerRepository.findAll();
+//			return customersList;
 		return customerRepository.findAll();
 
 	}
@@ -48,6 +50,6 @@ public class ICustomerServiceImp implements ICustomerService {
 	@Override
 	public Customer viewCustomerById(Integer customerId) {
 		return customerRepository.findById(customerId).get();
-	}
 
+	}
 }

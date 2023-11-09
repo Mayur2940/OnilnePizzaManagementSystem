@@ -7,12 +7,16 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import com.onlinepizza.entity.Pizza;
 import com.onlinepizza.entity.PizzaType;
 import com.onlinepizza.entity.Toppings;
 import com.onlinepizza.serviceimp.IPizzaServiceImp;
 
+@RestController
+@RequestMapping("/pizzaservice")
 public class IPizzaServiceController {
 	
 	@Autowired 
@@ -97,6 +101,5 @@ public class IPizzaServiceController {
 		return iPizzaServiceImp.viewAllPizzaTypes();
 		
 	}
-	
 }
 

@@ -21,53 +21,56 @@ import com.onlinepizza.service.IPizzaOrderService;
 public class IPizzaOrderController {
 
 	@Autowired
-	IPizzaOrderService iPizzaOrderService;
+	IPizzaOrderService ipizzaorderservice;
 
 	@PostMapping("/porder")
 	public PizzaOrder bookPizzaOrder(PizzaOrder order) {
 
-		return iPizzaOrderService.bookPizzaOrder(order);
+		return ipizzaorderservice.bookPizzaOrder(order);
 
 	}
 
 	@PutMapping("/pizzaupdate")
 	public PizzaOrder updatepizzaOrder(@RequestBody PizzaOrder pizzaOrder) {
-		return iPizzaOrderService.updatepizzaOrder(pizzaOrder);
+		return ipizzaorderservice.updatepizzaOrder(pizzaOrder);
 
 	}
 
 	@DeleteMapping("/pizzacancel")
 	public String cancelPizzaOrder(Integer pizzaId) {
 
-		return iPizzaOrderService.cancelPizzaOrder(pizzaId);
+		return ipizzaorderservice.cancelPizzaOrder(pizzaId);
+
 	}
 
 	@GetMapping("/pbyid/{pizzaOrderId}")
 	public PizzaOrder viewPizzaOrderById(@PathVariable("pizzaOrderId") Integer pizzaOrderId) {
-		return iPizzaOrderService.viewPizzaOrderById(pizzaOrderId);
+		return ipizzaorderservice.viewPizzaOrderById(pizzaOrderId);
 
 	}
-	
+
 	@GetMapping("/viewallporders")
-	public List<PizzaOrder> viewAllPizzaOrders(){
-		return iPizzaOrderService.viewAllPizzaOrders();
-		
+	public List<PizzaOrder> viewAllPizzaOrders() {
+		return ipizzaorderservice.viewAllPizzaOrders();
+
 	}
-	
+
 	@GetMapping("/viewbydates/{startDate}/{endDate}")
-	public 	List<PizzaOrder> viewPizzaOrderByStartAndEndDate(@PathVariable("startDate") LocalDate startDate, @PathVariable ("endDate") LocalDate endDate){
-		return iPizzaOrderService.viewPizzaOrderByStartAndEndDate(startDate, endDate);
-		
+	public List<PizzaOrder> viewPizzaOrderByStartAndEndDate(@PathVariable("startDate") LocalDate startDate,
+			@PathVariable("endDate") LocalDate endDate) {
+		return ipizzaorderservice.viewPizzaOrderByStartAndEndDate(startDate, endDate);
+
 	}
-	
+
 	@GetMapping("/viewpbyldate")
-	public 	List<PizzaOrder> viewPizzaOrderByDate(@PathVariable LocalDate date){
-		return iPizzaOrderService.viewPizzaOrderByDate(date);
-		
+	public List<PizzaOrder> viewPizzaOrderByDate(@PathVariable LocalDate date) {
+		return ipizzaorderservice.viewPizzaOrderByDate(date);
+
 	}
-	
-	public 	List<PizzaOrder> viewPizzaOrderByCustomerId(Integer customerId){
+
+	public List<PizzaOrder> viewPizzaOrderByCustomerId(Integer customerId) {
 		return null;
-		
+
 	}
+
 }

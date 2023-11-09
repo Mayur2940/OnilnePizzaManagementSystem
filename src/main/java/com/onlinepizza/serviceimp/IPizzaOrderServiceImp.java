@@ -89,9 +89,7 @@ public class IPizzaOrderServiceImp implements IPizzaOrderService {
 
 	@Override
 	public List<PizzaOrder> viewPizzaOrderByCustomerIdAndStatus(Integer customerId, String status) {
-		return pizzaOrderRepository.findAll().stream()
-				.filter(e -> e.getCustomer().getUserId() == customerId && e.getStatus().toString().equals(status))
-				.collect(Collectors.toList());
+		return pizzaOrderRepository.findAll().stream().filter(e -> e.getCustomer().getUserId() == customerId && e.getStatus().toString().equals(status)).collect(Collectors.toList());
 	}
 
 }

@@ -2,6 +2,13 @@ package com.onlinepizza.dto;
 
 import com.onlinepizza.util.PizzaSize;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class PizzaDTO {
 
 	private Integer pizzaId;

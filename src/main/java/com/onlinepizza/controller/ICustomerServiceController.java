@@ -17,35 +17,36 @@ import com.onlinepizza.serviceimp.ICustomerServiceImp;
 @RestController
 @RequestMapping("/customerservice")
 public class ICustomerServiceController {
-
 	@Autowired
-	ICustomerServiceImp iCustomerServiceImp;
-	
+	ICustomerServiceImp icustomerserviceimp;
+
 	@PostMapping("/regcustomer")
-	public Customer registerCustomer(@RequestBody Customer customer)
-	{
-		return iCustomerServiceImp.registerCustomer(customer);
+	public Customer registerCustomer(@RequestBody Customer customer) {
+		return icustomerserviceimp.registerCustomer(customer);
+
 	}
-	
+
 	@PostMapping("/updatecustomer")
-	public Customer updateCustomer(@RequestBody Customer customer)
-	{
-		return iCustomerServiceImp.updateCustomer(customer);
+	public Customer updateCustomer(@RequestBody Customer customer) {
+		return icustomerserviceimp.updateCustomer(customer);
+
 	}
-	
-	@PutMapping ("/viewcbyphone/{phoneNo}")
-	public Customer viewCustomerByPhone(@PathVariable ("phoneNo") Long phoneNo) {
-		return iCustomerServiceImp.viewCustomerByPhone(phoneNo);
+
+	@PutMapping("/viewcbyphone/{phoneNo}")
+	public Customer viewCustomerByPhone(@PathVariable("phoneNo") Long phoneNo) {
+		return icustomerserviceimp.viewCustomerByPhone(phoneNo);
+
 	}
-	
+
 	@GetMapping("/viewallcustomer")
-	public List<Customer> viewAllCustomer(){
-		return iCustomerServiceImp.viewAllCustomer();
+	public List<Customer> viewAllCustomer() {
+		return icustomerserviceimp.viewAllCustomer();
+
 	}
-	
+
 	@GetMapping("/viewcbyid/{customerId}")
-	public Customer viewCustomerById(@PathVariable (" customerId") Integer customerId) {
-		return iCustomerServiceImp.viewCustomerById(customerId);
-		
+	public Customer viewCustomerById(@PathVariable(" customerId") Integer customerId) {
+		return icustomerserviceimp.viewCustomerById(customerId);
+
 	}
 }

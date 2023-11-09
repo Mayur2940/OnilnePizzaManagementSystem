@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 import com.onlinepizza.util.PizzaStatus;
 
@@ -31,7 +32,7 @@ public class PizzaOrder {
 	
 	@OneToMany
 	private List<Pizza> pizzaList;
-	@ManyToOne
+	@OneToOne
 	private Customer customer;
 	private PizzaStatus status;
 }

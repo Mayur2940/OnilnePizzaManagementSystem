@@ -8,6 +8,6 @@ import com.onlinepizza.entity.User;
 @Repository
 public interface UserRepository extends JpaRepository<User, Integer> {
 
-	User findByName(String name);
+	User findByUserName(String name);
 //	User findByUserId(int id);  // check once
 }
